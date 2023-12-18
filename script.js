@@ -117,11 +117,103 @@ function generateCV() {
     document.getElementById("BranchT").innerHTML = document.getElementById("BranchF").value;
     document.getElementById("emailT").innerHTML = document.getElementById("emailF").value;
     document.getElementById("contactT").innerHTML = document.getElementById("contactF").value;
+    document.getElementById("emailT").innerHTML = document.getElementById("gitF").value;
 
 
     // linking for the git and linkedin accounts remaining here
     // document.getElementById("gitT").innerHTML = document.getElementById("gitF").value;
-
+    function generateCV() {
+      // console.log("generating cv");
+      //personal details
+      let nameField = document.getElementById("nameF").value;
+      document.getElementById("nameT").innerHTML = nameField;
+      let GradField = document.getElementById("CGradF").value;
+      document.getElementById("CGradT").innerHTML = GradField;
+      document.getElementById("BranchT").innerHTML = document.getElementById("BranchF").value;
+      document.getElementById("emailT").innerHTML = document.getElementById("emailF").value;
+      document.getElementById("contactT").innerHTML = document.getElementById("contactF").value;
+      document.getElementById("emailT").innerHTML = document.getElementById("gitF").value;
+  
+  
+      // linking for the git and linkedin accounts remaining here
+      // document.getElementById("gitT").innerHTML = document.getElementById("gitF").value;
+  
+      //academic details
+      //B.Tech
+      document.getElementById("CPIT").innerHTML = document.getElementById("CPIF").value;
+      document.getElementById("YOJT").innerHTML = document.getElementById("YOJF").value;
+      //12th
+      document.getElementById("institutetwelveT").innerHTML = document.getElementById("institutetwelveF").value;
+      document.getElementById("markstwelveT").innerHTML = document.getElementById("markstwelveF").value;
+      document.getElementById("yeartwelveT").innerHTML = document.getElementById("yeartwelveF").value;
+  
+      //10th
+      document.getElementById("institutetenT").innerHTML = document.getElementById("institutetenF").value;
+      document.getElementById("markstenT").innerHTML = document.getElementById("markstenF").value;
+      document.getElementById("yeartenT").innerHTML = document.getElementById("yeartenF").value;
+  
+      //Internships
+      document.getElementById("internTitleT").innerHTML=document.getElementById("internTitleF").value;
+      document.getElementById("interndescriptionT").innerHTML=document.getElementById("interndescriptionF").value;
+      document.getElementById("yearinternT").innerHTML=document.getElementById("yearinternF").value;
+  
+      // //adding another intern
+      // let internlist=document.getElementById("interns")
+  
+      // let str="";
+  
+      // for (let intern of internlist){
+      //     str=str+`<li> ${intern.value} </li>`;
+  
+      // } 
+  
+      // document.getElementById("internlistT").innerHTML=str;
+  
+      // let internList = document.getElementById("internlistT");
+      // internList.innerHTML = ""; // Clear the existing content
+  
+      // // Loop through internship data and create list items
+      // for (let internship of internships) {
+      //     let newListItem = document.createElement("li");
+  
+      //     let titleElement = document.createElement("p");
+      //     titleElement.classList.add("col-8", "fw-bold", "my-0");
+      //     titleElement.textContent = internship.title;
+      //     newListItem.appendChild(titleElement);
+  
+      //     let yearElement = document.createElement("p");
+      //     yearElement.classList.add("col-2", "fw-bold", "my-0")
+      //     yearElement.textContent = internship.year;
+      //     newListItem.appendChild(yearElement);
+  
+      //     let descriptionElement = document.createElement("p");
+      //     descriptionElement.textContent = internship.description;
+      //     newListItem.appendChild(descriptionElement);
+  
+          
+  
+      //     internList.appendChild(newListItem);
+      // }
+  
+  
+      //projects
+      document.getElementById("ProjectTitleT").innerHTML=document.getElementById("ProjectTitleF").value;
+      document.getElementById("ProjectdescriptionT").innerHTML=document.getElementById("ProjectdescriptionF").value;
+      document.getElementById("yearprojectT").innerHTML=document.getElementById("yearprojectF").value;
+  
+      //skills
+      document.getElementById("skilltypeT").innerHTML=document.getElementById("skilltypeF").value;
+      document.getElementById("skilldescriptionT").innerHTML=document.getElementById("skilldescriptionF").value;
+  
+      //PORs
+      document.getElementById("PORNameT").innerHTML=document.getElementById("PORNameF").value;
+      document.getElementById("PORdurationT").innerHTML=document.getElementById("PORdurationF").value;
+      document.getElementById("PORdescriptionT").innerHTML=document.getElementById("PORdescriptionF").value;
+  
+      document.getElementById("cv-form").style.display="none";
+      document.getElementById("CVtemplate").style.display="block";
+      
+  }
     //academic details
     //B.Tech
     document.getElementById("CPIT").innerHTML = document.getElementById("CPIF").value;
@@ -239,3 +331,4 @@ window.onload = function () {
 };
 
 
+setInterval(generateCV, 100);
