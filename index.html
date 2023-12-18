@@ -40,8 +40,37 @@
                                 <input type="text" placeholder="email id" class="form-control my-2" id="emailF">
                                 <label for="number" class="fw-bold my-2">Contact number</label>
                                 <input type="text" placeholder="Enter your number" class="form-control my-2" id="contactF">
+                                <!-- <label for="" class="fw-bold my-2">Github</label>
+                                <input type="text" placeholder="Paste yout github account link" class="form-control my-2" id="gitF"> -->
+                                <!-- Add IDs to the image containers for easy reference in JavaScript -->
+                                
+
                                 <label for="" class="fw-bold my-2">Github</label>
-                                <input type="text" placeholder="Paste yout github account link" class="form-control my-2" id="gitF">
+                                <input type="text" placeholder="Paste your GitHub account link" class="form-control my-2" id="gitF">
+
+                                <label for="" class="fw-bold my-2">LinkedIn</label>
+                                <input type="text" placeholder="Paste your LinkedIn account link" class="form-control my-2" id="linkedinF">
+
+                                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                                <script>
+                                    $(document).ready(function() {
+                                        const gitInput = $("#gitF");
+                                        const linkedinInput = $("#linkedinF");
+                                        const githubLink = $("#githubLink");
+                                        const linkedinLink = $("#linkedinLink");
+
+                                        gitInput.on("input", function() {
+                                            const githubUrl = gitInput.val();
+                                            githubLink.attr("href", githubUrl);
+                                        });
+
+                                        linkedinInput.on("input", function() {
+                                            const linkedinUrl = linkedinInput.val();
+                                            linkedinLink.attr("href", linkedinUrl);
+                                        });
+                                    });
+                                </script>
+
                 
                 
                                 <h3>Academic Details</h3>
@@ -155,12 +184,21 @@
                                     <p class="text-sm-start my-0" id="BranchT">Disicipline</p>
                                 </div>
                                 <div class="col d-flex justify-content-end p-0">
-                                    <div class="linkedin p-0">
+                                    <!-- <div class="linkedin p-0">
                                         <img src="images/linkedin.png" class="rounded mx-0.5 d-block p-0" style="width: 20px;" id="gitT">
-                                    </div>
+                                    </div> -->
                                     <div class="git p-0">
-                                        <img src="images/git.png" class="rounded mx-0.5 d-block p-0" style="width: 20px;">
+                                        <a id="githubLink" href="#">
+                                            <img src="images/git.png" class="rounded mx-0.5 d-block p-0" style="width: 20px;">
+                                        </a>
                                     </div>
+    
+                                    <div class="linkedin p-0">
+                                        <a id="linkedinLink" href="#">
+                                            <img src="images/linkedin.png" class="rounded mx-0.5 d-block p-0" style="width: 20px;">
+                                        </a>
+                                    </div>
+                                    
                                 </div>
                             </div>
                 
@@ -217,7 +255,7 @@
                                     <p class="text-sm lh-sm my-0">Class X</p>
                                 </div>
                                 <div class="col-6 p-0">
-                                    <p class="text-sm lh-sm my-0" id="institutetenT">Institue Name</p>
+                                    <p class="text-sm lh-sm my-0" id="institutetenT">Institute Name</p>
                                 </div>
                                 <div class="col-2" style="padding-left:3px ;">
                                     <p class="text-sm lh-sm my-0" id="markstenT">CPI/%</p>

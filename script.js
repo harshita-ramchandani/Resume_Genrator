@@ -117,7 +117,7 @@ function generateCV() {
     document.getElementById("BranchT").innerHTML = document.getElementById("BranchF").value;
     document.getElementById("emailT").innerHTML = document.getElementById("emailF").value;
     document.getElementById("contactT").innerHTML = document.getElementById("contactF").value;
-    document.getElementById("emailT").innerHTML = document.getElementById("gitF").value;
+    // document.getElementById("emailT").innerHTML = document.getElementById("gitF").value;
 
 
     // linking for the git and linkedin accounts remaining here
@@ -132,7 +132,7 @@ function generateCV() {
       document.getElementById("BranchT").innerHTML = document.getElementById("BranchF").value;
       document.getElementById("emailT").innerHTML = document.getElementById("emailF").value;
       document.getElementById("contactT").innerHTML = document.getElementById("contactF").value;
-      document.getElementById("emailT").innerHTML = document.getElementById("gitF").value;
+      // document.getElementById("emailT").innerHTML = document.getElementById("gitF").value;
   
   
       // linking for the git and linkedin accounts remaining here
