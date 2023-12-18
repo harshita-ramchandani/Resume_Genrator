@@ -3,7 +3,10 @@
 }
 #Cvtemplate .row{
     padding: 5px;
+    margin-right: 3px;
+    margin-left: 0px;
 }
+
 body{
     padding: 2px;
 }
