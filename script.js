@@ -1,111 +1,235 @@
 let internships = [];
+let projects = [];
+let skills = [];
+let PORs = [];
 
-// function addNewIntern() {
-//   // Clone the internship container
-//   let internshipContainer = document.querySelector("#interns");
-//   let newInternContainer = internshipContainer.cloneNode(true);
+function addNewIntern() {
+  // Get values from the form
+  let title = document.getElementById("internTitleF").value;
+  let description = document.getElementById("interndescriptionF").value;
+  let year = document.getElementById("yearinternF").value;
 
-//   // Clear visible input values
-//   let visibleInputs = newInternContainer.querySelectorAll("input[type='text'], textarea");
-//   visibleInputs.forEach(input => input.value = "");
+  // Create new internship object and add to array
+  internships.push({
+    title: title,
+    description: description,
+    year: year
+  });
 
-//   // Update input values before adding to array
-//   let title = document.getElementById("internTitleF").value;
-//   let description = document.getElementById("interndescriptionF").value;
-//   let year = document.getElementById("yearinternF").value;
+  // Update the display list
+  updateInternshipList();
 
-//   // Create new internship object and add to array
-//   internships.push({
-//     title: title,
-//     description: description,
-//     year: year
-//   });
-
-//   // Append the cloned container to the parent container
-//   let internsContainer = document.getElementById("interns");
-//   internsContainer.appendChild(newInternContainer);
-// }
+  // Clear form fields
+  document.getElementById("internTitleF").value = "";
+  document.getElementById("interndescriptionF").value = "";
+  document.getElementById("yearinternF").value = "";
+}
 
 function updateInternshipList() {
-    // Get the list element
-    let internList = document.getElementById("internlistT");
-  
-    // Loop through each internship in the array
-    for (let internship of internships) {
-      // Create new list item element
-      let newListItem = document.createElement("li");
-  
-      // Create elements for title, description, and year with appropriate content
-      let titleElement = document.createElement("p");
-      titleElement.classList.add("fw-bold", "my-0");
-      titleElement.textContent = internship.title;
-      newListItem.appendChild(titleElement);
-      
-      // ... Add similar elements for description and year using internship data ...
-  
-      // Append the new list item to the existing list
-      internList.appendChild(newListItem);
-    }
+  // Get the list element
+  let internList = document.getElementById("internlistT");
+
+  // Clear existing list
+  internList.innerHTML = "";
+
+  // Loop through each internship in the array
+  for (let internship of internships) {
+    // Create new list item element
+    let newListItem = document.createElement("li");
+
+    // Create elements for title, description, and year with appropriate content
+    let titleElement = document.createElement("p");
+    titleElement.classList.add("fw-bold", "my-0");
+    titleElement.textContent = internship.title;
+    newListItem.appendChild(titleElement);
+
+    let yearElement = document.createElement("p");
+    yearElement.classList.add("text-sm-end", "fw-bold", "my-0");
+    yearElement.textContent = internship.year;
+    newListItem.appendChild(yearElement);
+
+    let descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("text-sm", "p-0", "my-0", "justify-content");
+    descriptionElement.textContent = internship.description;
+    newListItem.appendChild(descriptionElement);
+
+    // Append the new list item to the existing list
+    internList.appendChild(newListItem);
   }
-// Update list on submit or whenever needed
-updateInternshipList();
+}
+
+// Initialize an empty array to store projects
 
 
-// function addNewIntern() {
-//     // Clone the internship container
-//     let internshipContainer = document.querySelector('#interns');
-//     let newInternContainer = internshipContainer.cloneNode(true);
-
-//     // Clear input values in the cloned container
-//     let inputs = newInternContainer.querySelectorAll('input, textarea');
-//     inputs.forEach(input => input.value = '');
-
-//     // Append the cloned container to the parent container
-//     let internsContainer = document.getElementById("interns");
-//     internsContainer.appendChild(newInternContainer);
-// }
-
+// Function to add a new project
 function addNewProject() {
-    // Clone the internship container
-    let projectContainer = document.querySelector('#projects');
-    let newProjectContainer = projectContainer.cloneNode(true);
+  // Get values from the form
+  let title = document.getElementById("ProjectTitleF").value;
+  let description = document.getElementById("ProjectdescriptionF").value;
+  let year = document.getElementById("yearprojectF").value;
 
-    // Clear input values in the cloned container
-    let inputs = newProjectContainer.querySelectorAll('input, textarea');
-    inputs.forEach(input => input.value = '');
+  // Create a new project object and add it to the array
+  projects.push({
+    title: title,
+    description: description,
+    year: year
+  });
 
-    // Append the cloned container to the parent container
-    let projectsContainer = document.getElementById("projects");
-    projectsContainer.appendChild(newProjectContainer);
+  // Update the display list
+  updateProjectList();
+
+  // Clear form fields
+  document.getElementById("ProjectTitleF").value = "";
+  document.getElementById("ProjectdescriptionF").value = "";
+  document.getElementById("yearprojectF").value = "";
 }
 
+// Function to update the project list on the webpage
+function updateProjectList() {
+  // Get the list element
+  let projectList = document.getElementById("projectList");
+
+  // Clear existing list
+  projectList.innerHTML = "";
+
+  // Loop through each project in the array
+  for (let project of projects) {
+    // Create a new list item element
+    let newListItem = document.createElement("li");
+
+    // Create elements for title, description, and year with appropriate content
+    let titleElement = document.createElement("p");
+    titleElement.classList.add("fw-bold", "my-0");
+    titleElement.textContent = project.title;
+    newListItem.appendChild(titleElement);
+
+    let yearElement = document.createElement("p");
+    yearElement.classList.add("text-sm-end", "fw-bold", "my-0");
+    yearElement.textContent = project.year;
+    newListItem.appendChild(yearElement);
+
+    let descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("text-sm", "p-0", "my-0", "justify-content");
+    descriptionElement.textContent = project.description;
+    newListItem.appendChild(descriptionElement);
+
+    // Append the new list item to the existing list
+    projectList.appendChild(newListItem);
+  }
+}
+
+// Initialize an empty array to store skills
+
+// Function to add a new skill
 function addNewSkill() {
-    // Clone the internship container
-    let skillContainer = document.querySelector('#skills');
-    let newskillContainer = skillContainer.cloneNode(true);
+  // Get values from the form
+  let skillType = document.getElementById("skilltypeF").value;
+  let skillDescription = document.getElementById("skilldescriptionF").value;
 
-    // Clear input values in the cloned container
-    let inputs = newskillContainer.querySelectorAll('input, textarea');
-    inputs.forEach(input => input.value = '');
+  // Create a new skill object and add it to the array
+  skills.push({
+    type: skillType,
+    description: skillDescription
+  });
 
-    // Append the cloned container to the parent container
-    let skillsContainer = document.getElementById("skills");
-    skillsContainer.appendChild(newskillContainer);
+  // Update the display list
+  updateSkillList();
+
+  // Clear form fields
+  document.getElementById("skilltypeF").value = "";
+  document.getElementById("skilldescriptionF").value = "";
 }
 
+// Function to update the skill list on the webpage
+function updateSkillList() {
+  // Get the list element
+  let skillList = document.getElementById("skillList");
+
+  // Clear existing list
+  skillList.innerHTML = "";
+
+  // Loop through each skill in the array
+  for (let skill of skills) {
+    // Create a new list item element
+    let newListItem = document.createElement("li");
+
+    // Create elements for skill type and description with appropriate content
+    let skillTypeElement = document.createElement("p");
+    skillTypeElement.classList.add("fw-bold", "my-0", "p-0");
+    skillTypeElement.textContent = skill.type;
+    newListItem.appendChild(skillTypeElement);
+
+    let skillDescriptionElement = document.createElement("p");
+    skillDescriptionElement.classList.add("text-sm", "p-0", "my-0", "justify-content");
+    skillDescriptionElement.textContent = skill.description;
+    newListItem.appendChild(skillDescriptionElement);
+
+    // Append the new list item to the existing list
+    skillList.appendChild(newListItem);
+  }
+}
+
+
+// Initialize an empty array to store PORs
+
+
+// Function to add a new Position of Responsibility (POR)
 function addNewPOR() {
-    // Clone the internship container
-    let PORContainer = document.querySelector('#PORs');
-    let newPORContainer = PORContainer.cloneNode(true);
+  // Get values from the form
+  let PORName = document.getElementById("PORNameF").value;
+  let PORDescription = document.getElementById("PORdescriptionF").value;
+  let PORDuration = document.getElementById("PORdurationF").value;
 
-    // Clear input values in the cloned container
-    let inputs = newPORContainer.querySelectorAll('input, textarea');
-    inputs.forEach(input => input.value = '');
+  // Create a new POR object and add it to the array
+  PORs.push({
+    name: PORName,
+    description: PORDescription,
+    duration: PORDuration
+  });
 
-    // Append the cloned container to the parent container
-    let PORsContainer = document.getElementById("PORs");
-    PORsContainer.appendChild(newPORContainer);
+  // Update the display list
+  updatePORList();
+
+  // Clear form fields
+  document.getElementById("PORNameF").value = "";
+  document.getElementById("PORdescriptionF").value = "";
+  document.getElementById("PORdurationF").value = "";
 }
+
+// Function to update the POR list on the webpage
+function updatePORList() {
+  // Get the list element
+  let PORList = document.getElementById("PORList");
+
+  // Clear existing list
+  PORList.innerHTML = "";
+
+  // Loop through each POR in the array
+  for (let POR of PORs) {
+    // Create a new list item element
+    let newListItem = document.createElement("li");
+
+    // Create elements for POR name, duration, and description with appropriate content
+    let PORNameElement = document.createElement("p");
+    PORNameElement.classList.add("fw-bold", "my-0", "p-0");
+    PORNameElement.textContent = POR.name;
+    newListItem.appendChild(PORNameElement);
+
+    let PORDurationElement = document.createElement("p");
+    PORDurationElement.classList.add("text-sm-end", "fw-bold", "my-0");
+    PORDurationElement.textContent = "[" + POR.duration + "]";
+    newListItem.appendChild(PORDurationElement);
+
+    let PORDescriptionElement = document.createElement("p");
+    PORDescriptionElement.classList.add("text-sm", "p-0", "my-0", "justify-content");
+    PORDescriptionElement.textContent = POR.description;
+    newListItem.appendChild(PORDescriptionElement);
+
+    // Append the new list item to the existing list
+    PORList.appendChild(newListItem);
+  }
+}
+
 
 function generateCV() {
     // console.log("generating cv");
@@ -197,6 +321,7 @@ function generateCV() {
 
     document.getElementById("cv-form").style.display="none";
     document.getElementById("CVtemplate").style.display="block";
+    
     
 }
 

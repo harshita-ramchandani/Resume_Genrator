@@ -86,7 +86,8 @@
                                 <input type="text" placeholder="Marks secured in 10th" class="form-control my-2" id="markstenF">
                                 <input type="text" placeholder="Year of completion. Ex: 2018-2019" class="form-control my-2"
                                     id="yeartenF">
-                
+                                
+                                <div id="interns-container">
                                 <h3>Internships</h3>
                                 <div class="form-group" id="interns">
                                     <input type="text" placeholder="Intern Title and company name" class="form-control internships my-2"
@@ -96,8 +97,10 @@
                                     <input type="text" placeholder="Duration of project Ex: May’22-Dec’22" class="form-control my-2"
                                         id="yearinternF">
                                 </div>
+                                </div>
                                 <button onclick="addNewIntern()" class="btn btn-info my-4" id="internaddbutton">Add another</button>
-                
+                                
+                                <div id="projects-container">
                                 <h3>Projects</h3>
                                 <div class="form-group" id="projects">
                                     <input type="text" placeholder="Enter Project Name" class="form-control my-2" id="ProjectTitleF">
@@ -105,6 +108,7 @@
                                         rows="3" id="ProjectdescriptionF"></textarea>
                                     <input type="text" placeholder="Duration of project Ex: May’22-Dec’22" class="form-control my-2"
                                         id="yearprojectF">
+                                </div>
                                 </div>
                                 <button onclick="addNewProject()" class="btn btn-info my-4">Add another</button>
                 
@@ -308,6 +312,8 @@
                             <div class="row my-0" style="background-color: lightgray;">
                                 <p class="fw-bold my-0 p-0">PROJECTS</p>
                             </div>
+                            <ul style="list-style-type:none;" class="my-0 p-0" id="projectList">
+                                <li>
                             <div class="row">
                                 <div class="col-8 p-0">
                                     <p class="fw-bold my-0" id="ProjectTitleT">Title of Project, name of concerned professor</p>
@@ -323,6 +329,9 @@
                                     quaerat adipisci nobis dignissimos iste est. Ad veniam, ducimus odit eligendi magni enim quod
                                     consequuntur unde autem vel.</p>
                             </div>
+                        </li>
+                    </ul>
+
                             <!-- <div class="row">
                                 <div class="col-8 p-0">
                                     <p class="fw-bold my-0">Title of Project, name of concerned professor</p>
@@ -342,16 +351,22 @@
                             <div class="row my-0" style="background-color: lightgray;">
                                 <p class="fw-bold my-0 p-0">SKILLS</p>
                             </div>
-                            <div class="row">
-                                <div class="col-8 p-0">
-                                    <p class="fw-bold my-0" id="skilltypeT">Type of Skill</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <p class="text-sm p-0 my-0 justify-content" id="skilldescriptionT">Lorem ipsum dolor sit amet
-                                    consectetur, adipisicing
-                                    elit. Explicabo quia et excepturi beatae rerum deserunt quia</p>
-                            </div>
+                            <ul style="list-style-type:none;" class="my-0 p-0" id="skillList">
+                                <li>
+
+                                    
+                                    <div class="row">
+                                        <div class="col-8 p-0">
+                                            <p class="fw-bold my-0" id="skilltypeT">Type of Skill</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="text-sm p-0 my-0 justify-content" id="skilldescriptionT">Lorem ipsum dolor sit amet
+                                            consectetur, adipisicing
+                                            elit. Explicabo quia et excepturi beatae rerum deserunt quia</p>
+                                    </div>
+                                </li>
+                            </ul>    
                             <!-- <div class="row">
                                 <div class="col-8 p-0">
                                     <p class="fw-bold my-0">Type of Skill</p>
@@ -366,6 +381,9 @@
                             <div class="row my-0" style="background-color: lightgray;">
                                 <p class="fw-bold my-0 p-0">POSITIONS OF RESPONSIBILITY</p>
                             </div>
+                            
+                            <ul style="list-style-type:none;" class="my-0 p-0" id="PORList">
+                                <li>
                             <div class="row">
                                 <div class="col-8 p-0">
                                     <p class="fw-bold my-0" id="PORNameT">POR Name</p>
@@ -379,19 +397,10 @@
                                     adipisicing
                                     elit. Explicabo quia et excepturi beatae rerum deserunt quia</p>
                             </div>
-                            <!-- <div class="row">
-                                <div class="col-8 p-0">
-                                    <p class="fw-bold my-0">POR Nmae</p>
-                                </div>
-                                <div class="col-4 p-0">
-                                    <p class="text-sm-end fw-bold my-0">[Duration of POR]</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <p class="text-sm p-0 my-0 justify-content">Lorem ipsum dolor sit amet consectetur, adipisicing
-                                    elit. Explicabo quia et excepturi beatae rerum deserunt quia</p>
-                            </div> -->
-                
+                        </li>
+                    </ul>    
+                            
+
                         </div>
                 
                         <div class="form-group">
